@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8"> 
+   <title> lhd's beego programe </title>
+   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+   <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+   <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+</head>
+<body>
+
+<div class="container">
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">  <h7> {{.msg}} </h7>
+    </div>
+    <div class="panel-body">
+
+      
+       
+            <!-- {{range $i,$v := .data}}
+             <h1>{{$i}}----{{$v}}</h1>
+            {{end}} -->
+            
+            <table class="table table-bordered">
+                <caption> 用户列表</caption>
+                <thead>
+                  <tr>
+                    <th>名字</th>
+                    <th>密码</th>
+                    <th>添加时间</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {{range $i,$v := .data}}  
+                  <tr>
+                    <td>{{$v.Name}}</td>
+                    <td>{{$v.Pass}}</td>
+                    <td>{{$v.Addtime}}</td>
+                  </tr>
+                  {{end}}
+                </tbody>
+              </table>
+
+    </div>
+</div>
+
+
+<style>
+       .panel-primary .panel-heading{
+            background-color: red;
+            border-color: red;
+            text-align: center;
+        }
+
+        .panel-primary{
+            border-color: red;
+        }
+         
+    </style>
+
+   
+</div>
+
+</body>
+</html>
+
